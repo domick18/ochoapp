@@ -20,7 +20,7 @@ var opciones= { frequency: 2000 };
 watchID= navigator.accelerometer.watchAcceleration(Correcto, Error, opciones);
 navigator.geolocation.getCurrentPosition(Localiza,  ErrorLocalizacion);
 }
-// Detiene la 'observacion de la aceleracion
+// Detiene la 'observacion' de la aceleracion
 
 function Detente() {
 	if (watchID) {
@@ -35,9 +35,9 @@ function correcto(acceleration) {
 	var element = document.getElementById('acelerometro');
 	
 	element.innerHTML = 'Aceleracion en X: ' + acceleration.x + '<br />' +	
-'Aceleracion en Y: ' + acceleration.y + '<br />' +
- 'Aceleracion en Z: ' + acceleration.z + '<br />' +
- 'Intervalo: '   + acceleration.timestamp + '<br />';
+                        'Aceleracion en Y: ' + acceleration.y + '<br />' +
+                        'Aceleracion en Z: ' + acceleration.z + '<br />' +
+                        'Intervalo: '   + acceleration.timestamp + '<br />';
 }
 // Error: Falla al obtener la aceleracion
 function Error() {
@@ -48,7 +48,7 @@ function Localiza (posicion) {
 	var element = document.getElementById('geolocalizacion');
 	element.innerHTML = 'Latitud: ' +posicion.coords.latitude +' <br />' + 
 	          'Longitud: ' +posicion.coords.longitude +'          <br />' +
-	          'Altitud: ' +posicion.coords.altitud +'            <br />' +
+	          'Altitud: ' +posicion.coords.altitude +'            <br />' +
 	          'Precision: '  +posicion.coords.accuracy    +        '<br />' +
 	          'Precision de Altitud: ' + posicion.coords.altitudeAccuracy                                                   +'<br />'+
 	          'Direccion '  + posicion.coords.heading              +'<br />' + 
